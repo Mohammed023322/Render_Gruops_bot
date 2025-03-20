@@ -2,7 +2,6 @@ import json
 import re
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ConversationHandler, ContextTypes
-from keep_alive import keep_alive 
 
 TOKEN = "8060609250:AAEe47qcmRTlA4TETGG5DjJODbjc0-pvI-0"
 JSON_FILE = "responses.json"
@@ -119,7 +118,6 @@ async def delete_response(update, context):
         await update.message.reply_text(f"❌ لا توجد ردود محفوظة لهذه الكلمة: {keyword}")
 
 def main():
-    keep_alive() 
 
     app = ApplicationBuilder().token(TOKEN).build()
 
